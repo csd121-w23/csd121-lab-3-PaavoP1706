@@ -4,6 +4,7 @@ public class Viewer {
     
     public static void main(String[] args) {
         // TODO: Create a frame with one MainComponent in it
+        
     }
     
 }

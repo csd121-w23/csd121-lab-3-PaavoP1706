@@ -6,3 +6,15 @@ Write an algorithm to decide which commute is cheaper.
 
 Your answer in pseudocode below:
 
+double distance;
+double fuelEfficiency;
+double gasPrice;
+double trainTicket;
+Double carMaintenance;
+
+Double GasCost = distance * (gasPrice *  fuelEfficiency);
+Double commute cost = distance * carMaintenance = GasCost;
+
+if(trainTicket > commuteCost), Write "it is cheaper to commute"
+else if(trainTicket < commuteCost), write "it is cheaper to use the train"
+else, write " they are the same price"
