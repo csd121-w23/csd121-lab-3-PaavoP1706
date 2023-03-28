@@ -4,52 +4,64 @@ package programming_project_3_13;
    A bank account has a balance that can be changed by 
    deposits and withdrawals.
 */
-public class BankAccount
-{  
+public class BankAccount {
+   private double transactionCount = 0;
    private double balance;
+   private final double accountFee = 5;
 
    /**
-      Constructs a bank account with a zero balance.
-   */
-   public BankAccount()
-   {   
+    * Constructs a bank account with a zero balance.
+    */
+   public BankAccount() {
       balance = 0;
    }
 
    /**
-      Constructs a bank account with a given balance.
-      @param initialBalance the initial balance
-   */
-   public BankAccount(double initialBalance)
-   {   
+    * Constructs a bank account with a given balance.
+    *
+    * @param initialBalance the initial balance
+    */
+   public BankAccount(double initialBalance) {
       balance = initialBalance;
    }
 
    /**
-      Deposits money into the bank account.
-      @param amount the amount to deposit
-   */
-   public void deposit(double amount)
-   {  
-      balance = balance + amount;
+    * Deposits money into the bank account.
+    *
+    * @param amount the amount to deposit
+    */
+   public void deposit(double amount) {
+      balance = balance + amount - accountFee;
+      transactionCount++;
    }
 
    /**
-      Withdraws money from the bank account.
-      @param amount the amount to withdraw
-   */
-   public void withdraw(double amount)
-   {   
-      balance = balance - amount;
+    * Withdraws money from the bank account.
+    *
+    * @param amount the amount to withdraw
+    */
+   public void withdraw(double amount) {
+      balance = balance - amount - accountFee;
+      transactionCount++;
    }
 
    /**
-      Gets the current balance of the bank account.
-      @return the current balance
-   */
-   public double getBalance()
-   {   
+    * Gets the current balance of the bank account.
+    *
+    * @return the current balance
+    */
+   public double getBalance() {
       return balance;
    }
-}
 
+   public double deductMonthlyFee() {
+
+      if (Math.max(transactionCount, 5) > 5) {
+         balance = balance + (5 * 5);
+      } else if (Math.max(transactionCount, 5) <= 5) {
+         balance = balance + (transactionCount * 5);
+      }
+transactionCount = 0;
+      return transactionCount;
+   }
+}
