@@ -7,10 +7,11 @@ public class SavingsAccountTester {
         SavingsAccount paavosAccount = new SavingsAccount();
 
         paavosAccount.deposit(1000);
-        paavosAccount.withdraw(50);
 
         paavosAccount.addInterest(paavosAccount.getInterest());
-        System.out.println(paavosAccount.getBalance());
+        System.out.println("Actual Value: " + paavosAccount.getBalance());
+
+        System.out.println("Expected Value: 1100");
     }
 
     
